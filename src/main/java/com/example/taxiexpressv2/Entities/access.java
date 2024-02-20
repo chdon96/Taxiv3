@@ -1,6 +1,5 @@
 package com.example.taxiexpressv2.Entities;
 
-import com.example.taxiexpressv2.model.EmployeCredential;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -21,11 +20,11 @@ public class access implements Serializable {
         @JsonProperty(access = JsonProperty.Access.READ_ONLY)
         private Integer idAcess;
         private String accessName;
+        private boolean status;
+
         private boolean accesAdmin;
         private boolean accessTaxi;
         private boolean accessClient;
-        private boolean status;
 
-        @OneToMany
-        private List<EmployeCredential> accessEmployess;
+
 }
