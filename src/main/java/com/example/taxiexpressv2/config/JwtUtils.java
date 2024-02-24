@@ -15,7 +15,7 @@ import java.util.function.Function;
 @Component
 public class JwtUtils {
 
-	  private String SECRET_KEY = "examportal";
+	  private String SECRET_KEY = "6k6HljmBEQSSVAmZCfE79K2TrH5aLbwX82w+XWzHsWg=\n";
 
 	    public String extractUsername(String token) {
 	        return extractClaim(token, Claims::getSubject);

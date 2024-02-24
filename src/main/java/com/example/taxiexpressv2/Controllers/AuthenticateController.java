@@ -36,10 +36,7 @@ public class AuthenticateController {
 	@PermitAll
 	@PostMapping("/generate-token")
 	public ResponseEntity<?>generateToken(@RequestBody JwtRequest jwtRequest) throws Exception{
-		
-		
 		try {
-
 			authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
 			
 		}catch(UserNotFoundException e) {
