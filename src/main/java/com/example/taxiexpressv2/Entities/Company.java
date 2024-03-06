@@ -1,8 +1,10 @@
 package com.example.taxiexpressv2.Entities;
 
+import com.example.taxiexpressv2.Entities.usr.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.apache.catalina.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,10 +32,11 @@ public class Company implements Serializable {
     private Date updatedAt;
     private boolean status;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany//(mappedBy = "company")
     @JsonIgnore
     private List<Department> departments;
-
+    @OneToOne
+    public Users Responsable ;
 
 
 }

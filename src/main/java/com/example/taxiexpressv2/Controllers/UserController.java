@@ -27,7 +27,7 @@ public class UserController extends BaseController<Users, Integer>{
 	private UserServiceInterface userService;
 
 	@PermitAll
-		@PostMapping("/register")
+	@PostMapping("/register")
 	public Users register(@RequestBody Users user) throws Exception {
 		
 		Set<UserRole>roles = new HashSet<>();

@@ -2,7 +2,6 @@ package com.example.taxiexpressv2.Entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -26,6 +25,7 @@ public class Taxi implements Serializable {
     private String Numberplate;
     private int matricule ;
     @Temporal(TemporalType.DATE)
+    //Column(name = "created_at"
     private Date createdAt;
     @Temporal(TemporalType.DATE)
     private Date updatedAt;

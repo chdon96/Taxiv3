@@ -17,7 +17,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USERS")
+/*@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Table(name = "USERS")*/
 public class Users implements UserDetails{
 	
 	

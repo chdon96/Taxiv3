@@ -1,5 +1,6 @@
 package com.example.taxiexpressv2.Entities;
 
+//import com.example.taxiexpressv2.Entities.usr.Users;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import javax.persistence.*;
@@ -12,6 +13,8 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+/*@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("E")*/
 public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -23,8 +26,7 @@ public class Employee implements Serializable {
     private String email;
     private String password ;
 
-    @ManyToOne
-    private Department department;
+
     @ManyToOne
     private access access;
     @OneToMany

@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,9 +30,13 @@ public class PickUpRequest implements Serializable {
     private Date createdAt;
     private boolean status ;
 
+    @OneToMany
+    private List<Employee> passengers;
+
     @OneToOne
     private Courses course;
-    @OneToOne
+
+    @ManyToOne
     private Taxi taxi;
 
 

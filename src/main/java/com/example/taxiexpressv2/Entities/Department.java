@@ -1,8 +1,10 @@
 package com.example.taxiexpressv2.Entities;
 
+import com.example.taxiexpressv2.Entities.usr.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.apache.catalina.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,11 +24,11 @@ public class Department implements Serializable {
     private String title;
     private boolean status ;
 
-    @ManyToOne
-    private Company company;
+   // @ManyToOne
+   // private Company company;
     @OneToOne
     private AdressS departmentAdress;
-    @OneToMany(mappedBy = "department")
+    @OneToMany
     @JsonIgnore
-    private List<Employee> employess;
+    private List<Users> employess;
 }
