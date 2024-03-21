@@ -49,11 +49,12 @@ public class TaxiServiceImp implements iTaxiService {
 
     @Override
     public Taxi add(Taxi e) {
-        return null;
+        return taxiRepository.save(e);
     }
 
     @Override
     public Taxi update(Taxi e) {
+
         return taxiRepository.save(e);
     }
 

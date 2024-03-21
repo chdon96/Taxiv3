@@ -1,10 +1,12 @@
 package com.example.taxiexpressv2.Controllers.mainControllers;
 
 import com.example.taxiexpressv2.Entities.Company;
+import com.example.taxiexpressv2.Entities.Department;
 import com.example.taxiexpressv2.Entities.Taxi;
 import com.example.taxiexpressv2.Repositories.CompanyRepository;
 import com.example.taxiexpressv2.Repositories.TaxiRepository;
 import com.example.taxiexpressv2.Services.mainservices.interfaces.iCompanyService;
+import com.example.taxiexpressv2.Services.mainservices.interfaces.iDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,9 @@ import java.util.Optional;
 public class CompanyController {
     @Autowired
     private iCompanyService companyService;
+
+    @Autowired
+    private iDepartmentService departmentService;
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -41,5 +46,12 @@ public class CompanyController {
         System.out.println("ID"+id);
         Optional<Company> company = companyService.retrieveCompany(id);
         return new ResponseEntity<>(company, HttpStatus.CREATED);
+    }
+    @PostMapping("addDepartment/{idCompany}")
+    public ResponseEntity<Department> addDepartment(@RequestBody Department d, @PathVariable("idCompany") Integer idCompany) {
+
+        departmentService.addDepartmentToCompany(d,idCompany);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+
     }
 }

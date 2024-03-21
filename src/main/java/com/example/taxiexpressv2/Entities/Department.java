@@ -24,8 +24,8 @@ public class Department implements Serializable {
     private String title;
     private boolean status ;
 
-   // @ManyToOne
-   // private Company company;
+    @ManyToOne
+    private Company company;
     @OneToOne
     private AdressS departmentAdress;
     @OneToMany

@@ -24,6 +24,7 @@ public class Employee implements Serializable {
     private String lastName;
     private String homeAdress ;
     private String email;
+    private String phoneNumber;
     private String password ;
 
 
@@ -31,4 +32,12 @@ public class Employee implements Serializable {
     private access access;
     @OneToMany
     private List<PickUpRequest> pickUpRequestList;
+
+    public Employee(String firstName, String lastName, String email, String phoneNumber, String password) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.email =email ;
+        this.phoneNumber = phoneNumber;
+        this.password =password ;
+    }
 }

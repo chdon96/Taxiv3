@@ -42,7 +42,10 @@ public class CompanyServiceImp implements iCompanyService {
     }
 
     @Override
-    public void remove(Integer integer) {
-
+    public void remove(Integer idCompany) {
+       // Company c = companyRepository.findById(idCompany);
+        //c.setStatus(False);
     }
+
+
 }
